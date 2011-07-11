@@ -14,18 +14,13 @@ def config(n, ip, &block)
     p.json.merge!({ :ip => ip })
     yield p if block
   end
-  n.vm.provision :shell, :path => "scripts/chef-client.sh"
-  n.vm.provision :shell, :path => "scripts/knife-rsync.sh"
-  n.vm.provision :shell, :path => "scripts/ssh-rsync.sh"
+  n.vm.provision :shell, :path => "scripts/node.sh"
 end
 
 Vagrant::Config.run do |config|
   config.vm.define "chef.vm" do |n|
     n.vm.host_name = "chef.vm"
-    n.vm.provision :shell, :path => "scripts/chef-server.sh"
-    n.vm.provision :shell, :path => "scripts/knife-client.sh"
-    n.vm.provision :shell, :path => "scripts/knife-upload.sh"
-    n.vm.provision :shell, :path => "scripts/ssh-keygen.sh"
+    n.vm.provision :shell, :path => "scripts/chef.sh"
     config n, ipaddress
   end
   2.times do |x|
