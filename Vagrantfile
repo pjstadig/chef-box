@@ -7,6 +7,7 @@ def ipaddress(n=16) ; "172.16.172.#{n}" ; end
 def config(n, ip, &block)
   n.vm.box = @box
   n.vm.network ip
+  n.vm.customize { |vm| vm.memory_size = 512 }
   n.vm.provision :chef_server do |p|
     p.chef_server_url = "http://#{ipaddress}:4000"
     p.validation_key_path = ".chef/validation.pem"
