@@ -8,6 +8,6 @@ group :chef do
 end
 
 group :vagrant do
-  gem "vagrant", "~> 0.7.6"
+  gem "vagrant", "< 0.7.7"
   gem "veewee", "~> 0.1.29"
 end
