@@ -100,14 +100,38 @@ knife search node "name:chef*.vm"
 knife search node "name:node*.vm"
     #+END_SRC
 
+*** Cookbooks
+
+    Example: Works Anywhere (Host or Guest)
+
+    #+BEGIN_SRC: sh
+knife cookbook upload apt
+knife cookbook upload chef
+    #+END_SRC
+
+*** Run List
+
+    Example: Works Anywhere (Host or Guest)
+
+    #+BEGIN_SRC: sh
+knife node run_list add chef.vm "apt::cacher"
+knife node run_list add chef.vm "chef::server"
+knife node run_list add node0.vm "apt"
+knife node run_list add node1.vm "apt"
+knife node run_list add node0.vm "chef"
+knife node run_list add node1.vm "chef"
+    #+END_SRC
+
 *** SSH
 
     Example: Works Anywhere (Host or Guest)
 
     #+BEGIN_SRC: sh
-knife ssh "*:*" "date" -a ip -x vagrant -i .ssh/id_rsa --no-host-key-verify
+knife ssh "*:*" "sudo chef-client" -a ip -x vagrant -i .ssh/id_rsa --no-host-key-verify
     #+END_SRC
 
 * Changelog
+
 *** 0.5 Works with VirtualBox 4.0.10. Rebuild your VMS.
+
 * License [[LICENSE][Apache 2]]
