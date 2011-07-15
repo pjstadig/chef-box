@@ -105,6 +105,9 @@ knife search node "name:node*.vm"
     Example: Works Anywhere (Host or Guest)
 
     #+BEGIN_SRC: sh
+# git clone some cookbooks into ./cookbooks
+rake cookbooks
+# knife upload those cookbooks to the chef.vm server
 knife cookbook upload apt
 knife cookbook upload chef
     #+END_SRC
