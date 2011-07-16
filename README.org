@@ -130,7 +130,12 @@ knife node run_list add node1.vm "chef"
     Example: Works Anywhere (Host or Guest)
 
     #+BEGIN_SRC: sh
-knife ssh "*:*" "sudo chef-client" -a ip -x vagrant -i .ssh/id_rsa --no-host-key-verify
+knife ssh 'recipe:chef\:\:server' "sudo chef-client" \
+  -a ip -x vagrant -i .ssh/id_rsa --no-host-key-verify
+knife ssh 'recipe:apt'            "sudo apt-get update" \
+  -a ip -x vagrant -i .ssh/id_rsa --no-host-key-verify
+knife ssh 'recipe:chef'           "sudo chef-client" \
+  -a ip -x vagrant -i .ssh/id_rsa --no-host-key-verify
     #+END_SRC
 
 * Changelog
