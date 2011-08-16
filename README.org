@@ -91,8 +91,7 @@ knife cookbook upload ...
 knife role list
 knife role from file ...
 knife node run_list add ...
-knife ssh 'recipe:apt' "chef-client" \
-  -a ip -x vagrant -i .ssh/id_rsa --no-host-key-verify
+knife ssh 'recipe:apt' "chef-client" -a ip -x vagrant -i .ssh/id_rsa --no-host-key-verify
   #+END_SRC
 
 * Changelog
