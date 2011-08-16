@@ -41,14 +41,14 @@ bundle install
 rake box:natty64
   #+END_SRC
 
-  Build a LTS Lucid 32bit Box [ Warning: Takes several hours to build
-  all 32 & 64 bit boxes. ]
+  Build a LTS Lucid 32bit Box
 
   #+BEGIN_SRC: sh
 rake box:lucid32
   #+END_SRC
 
-  Build All Boxes
+  Build All Boxes [ Warning: Takes several hours to build all 32 & 64
+  bit boxes. Do this overnight. ]
 
   #+BEGIN_SRC: sh
 rake box:all
