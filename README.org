@@ -80,61 +80,20 @@ vagrant up node0.vm
 
 * Knife
 
-*** Node
+  Works Anywhere (Host or Guest)
 
-    Example: Works Anywhere (Host or Guest)
-
-    #+BEGIN_SRC: sh
+  #+BEGIN_SRC: sh
 knife node list
 knife node show chef.vm
-    #+END_SRC
-
-*** Search
-
-    Example: Works Anywhere (Host or Guest)
-
-    #+BEGIN_SRC: sh
-knife search node "name:chef*.vm"
 knife search node "name:node*.vm"
-    #+END_SRC
-
-*** Cookbooks
-
-    Example: Works Anywhere (Host or Guest)
-
-    #+BEGIN_SRC: sh
-# git clone some cookbooks into ./cookbooks
-rake cookbooks
-# knife upload those cookbooks to the chef.vm server
-knife cookbook upload apt
-knife cookbook upload chef
-    #+END_SRC
-
-*** Run List
-
-    Example: Works Anywhere (Host or Guest)
-
-    #+BEGIN_SRC: sh
-knife node run_list add chef.vm "apt::cacher"
-knife node run_list add chef.vm "chef::server"
-knife node run_list add node0.vm "apt"
-knife node run_list add node1.vm "apt"
-knife node run_list add node0.vm "chef"
-knife node run_list add node1.vm "chef"
-    #+END_SRC
-
-*** SSH
-
-    Example: Works Anywhere (Host or Guest)
-
-    #+BEGIN_SRC: sh
-knife ssh 'recipe:chef\:\:server' "sudo chef-client" \
+knife cookbook list
+knife cookbook upload ...
+knife role list
+knife role from file ...
+knife node run_list add ...
+knife ssh 'recipe:apt' "chef-client" \
   -a ip -x vagrant -i .ssh/id_rsa --no-host-key-verify
-knife ssh 'recipe:apt'            "sudo apt-get update" \
-  -a ip -x vagrant -i .ssh/id_rsa --no-host-key-verify
-knife ssh 'recipe:chef'           "sudo chef-client" \
-  -a ip -x vagrant -i .ssh/id_rsa --no-host-key-verify
-    #+END_SRC
+  #+END_SRC
 
 * Changelog
 
