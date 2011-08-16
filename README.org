@@ -5,7 +5,7 @@
 
 This project enables you to automatically build a complete set of
 [[http://www.ubuntu.com/][Ubuntu]] boxes for use with [[http://vagrantup.com][Vagrant]].  The boxes are built with the
-[[http://wiki.opscode.com/display/chef/Package%2BInstallation%2Bon%2BDebian%2Band%2BUbuntu][Official OpsCode Chef 0.10 Ubuntu Packages]] baked in.  This means you
+[[http://wiki.opscode.com/display/chef/Package%2BInstallation%2Bon%2BDebian%2Band%2BUbuntu][Official OpsCode Chef 0.10.4 Ubuntu Packages]] baked in.  This means you
 can start either a Chef Server or Client Node easily at boot time.
 
 Also included in this project is the Vagrant scaffolding to launch a
@@ -22,7 +22,7 @@ interweb cache.
 
 * Requirements
 
-  - [[http://www.virtualbox.org/wiki/Downloads][VirtualBox]] 4.0.10
+  - [[http://www.virtualbox.org/wiki/Downloads][VirtualBox]] 4.1.0
   - [[http://rvm.beginrescueend.com/][RVM]] latest
 
 * Setup
@@ -141,5 +141,6 @@ knife ssh 'recipe:chef'           "sudo chef-client" \
 * Changelog
 
 *** 0.5 Works with VirtualBox 4.0.10. Rebuild your VMS.
+*** 0.6 Works with VirtualBox 4.1.0. & Vagrant 0.8.5. Rebuild your VMS.
 
 * License [[LICENSE][Apache 2]]
