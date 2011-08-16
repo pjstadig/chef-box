@@ -34,7 +34,7 @@ bundle install
 
 * Build
 
-  Example: Build a Natty 64bit Box
+  Build a Natty 64bit Box
 
   #+BEGIN_SRC: sh
 rake box:natty64
@@ -43,37 +43,35 @@ rake box:natty64
   Warning: Building a Vagrant Box takes about 20 minutes on my i7
   MacBook Pro - go get some lunch & come back
 
-  Example: Build a LTS Lucid 32bit Box
+  Build a LTS Lucid 32bit Box
 
   #+BEGIN_SRC: sh
 rake box:lucid32
   #+END_SRC
 
-  Example: Build All Boxes
+  Build All Boxes
 
   #+BEGIN_SRC: sh
 rake box:all
   #+END_SRC
 
-  Warning: Takes several hours to build 32 & 64 bit boxes for Lucid,
-  Maverick & Natty - do it at night when you wont be tapping your
-  foot.
+  Warning: Takes several hours to build all 32 & 64 bit boxes.
 
 * Launch
 
-  Example: Launch a 3-Node Natty64 Cluster
+  Launch a 3-Node Natty64 Cluster
 
   #+BEGIN_SRC: sh
 vagrant up
   #+END_SRC
 
-  Example: Launch a 3-Node Lucid32 Cluster
+  Launch a 3-Node Lucid32 Cluster
 
   #+BEGIN_SRC: sh
 BOX=lucid32 vagrant up
   #+END_SRC
 
-  Example: Only 1 Chef Server & 1 Chef Client Node
+  Only 1 Chef Server & 1 Chef Client Node
 
   #+BEGIN_SRC: sh
 vagrant up chef.vm
