@@ -3,7 +3,7 @@ source :rubygems
 gem "rake", "~> 0.9.2"
 
 group :chef do
-  gem "chef", "~> 0.10.2"
+  gem "chef", "~> 0.10.4"
 end
 
 group :vagrant do
