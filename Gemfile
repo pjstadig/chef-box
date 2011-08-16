@@ -8,5 +8,5 @@ end
 
 group :vagrant do
   gem "vagrant", "< 0.7.7"
-  gem "veewee", "~> 0.1.29"
+  gem "veewee", "~> 0.2.0"
 end
