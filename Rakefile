@@ -1,7 +1,5 @@
 #-*- mode: ruby; -*-
 
-DIR = File.dirname(__FILE__)
-
 namespace :box do
   [ :lucid, :maverick, :natty ].each do |release|
     [ 32, 64 ].each do |architecture|
@@ -21,17 +19,4 @@ namespace :box do
 
   desc "Build all"
   task :all => @flavors
-end
-
-desc "Download Cookbooks"
-task :cookbooks do
-  mkdir_p DIR + 'cookbooks'
-  chdir('cookbooks') do
-    sh "echo '*' >> .gitignore" unless File.exists?('.gitignore')
-    %w[ apt chef ].each do |ckbk|
-      unless File.directory?(ckbk)
-        sh "git clone git@github.com:dysinger/cookbook-#{ckbk}.git #{ckbk}"
-      end
-    end
-  end
 end
