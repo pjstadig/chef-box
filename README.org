@@ -22,7 +22,7 @@ interweb cache.
 
 * Requirements
 
-  - [[http://www.virtualbox.org/wiki/Downloads][VirtualBox]] 4.1.0
+  - [[http://www.virtualbox.org/wiki/Downloads][VirtualBox]] 4.1.2
   - [[http://rvm.beginrescueend.com/][RVM]] latest
 
 * Setup
@@ -95,5 +95,6 @@ knife ssh "*:*" "sudo chef-client" -a ip -x vagrant -i .ssh/id_rsa --no-host-key
 
 *** 0.5 Works with VirtualBox 4.0.10. Rebuild your VMS.
 *** 0.6 Works with VirtualBox 4.1.0. & Vagrant 0.8.5. Rebuild your VMS.
+*** 0.6.1 Works with VirtualBox 4.1.2 & Vagrant 0.8.5
 
 * License [[LICENSE][Apache 2]]
