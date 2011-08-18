@@ -46,12 +46,8 @@ cookbook_path ["#{dir}/../cookbooks", "/vagrant/cookbooks"]
 fi
 
 # knife upload
-if [ -d /vagrant/cookbooks/ ]; then
-    cd /vagrant/cookbooks
-    for x in $(find * -maxdepth 0 -type d); do
-        sudo -Eu vagrant knife cookbook upload $x
-    done
-fi
+sudo -Eu vagrant knife cookbook upload -a
+
 if [ -d /vagrant/roles/ ]; then
     cd /vagrant/roles
     for x in $(ls | egrep ".*(rb|json)"); do
