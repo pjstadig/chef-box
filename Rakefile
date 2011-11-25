@@ -1,7 +1,7 @@
 #-*- mode: ruby; -*-
 
 namespace :box do
-  [ :lucid, :maverick, :natty ].each do |release|
+  [ :lucid, :maverick, :natty, :oneiric ].each do |release|
     [ 32, 64 ].each do |architecture|
       flavor = "#{release}#{architecture}"
       ( @flavors ||= [] ) << flavor
